@@ -1,0 +1,227 @@
+﻿/* Reset de márgenes y relleno por defecto */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo general del cuerpo */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #f5f5f5; /* Color del texto general en un gris claro */
+    line-height: 1.6;
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%); /* Fondo con gradiente suave */
+}
+
+/* Encabezado */
+header {
+    background: #1a1a1a; /* Fondo aún más oscuro para el encabezado */
+    color: #f5f5f5; /* Texto en gris claro */
+    padding: 20px 0;
+    border-bottom: 2px solid #444; /* Línea inferior para un toque profesional */
+}
+
+    header .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    header .logo a {
+        color: #f5f5f5; /* Logo en gris claro */
+        font-size: 24px;
+        text-decoration: none;
+        font-weight: bold; /* Negrita para mayor impacto */
+    }
+
+    header nav ul {
+        list-style: none;
+        display: flex;
+    }
+
+        header nav ul li {
+            margin: 0 15px;
+        }
+
+            header nav ul li a {
+                color: #f5f5f5; /* Enlaces en gris claro */
+                text-decoration: none;
+                font-size: 16px;
+                transition: color 0.3s ease; /* Transición suave para el color */
+            }
+
+                header nav ul li a:hover {
+                    color: #3498db; /* Color de enlace al pasar el cursor */
+                }
+
+    header .search-bar input {
+        padding: 8px;
+        border: 1px solid #444;
+        border-radius: 4px;
+        font-size: 16px;
+        background: #333; /* Fondo más oscuro para el campo de búsqueda */
+        color: #f5f5f5; /* Texto en gris claro */
+    }
+
+/* Sección Principal */
+.hero {
+    background: rgba(0, 0, 0, 0.6); /* Fondo oscuro semitransparente */
+    color: #f5f5f5; /* Texto en gris claro */
+    text-align: center;
+    padding: 80px 20px; /* Espacio alrededor del texto */
+    border-radius: 10px; /* Bordes redondeados */
+    margin: 0 auto; /* Centrar en la página */
+    max-width: 1200px; /* Ancho máximo */
+}
+
+    .hero h1 {
+        font-size: 48px;
+        margin-bottom: 20px;
+        font-weight: bold; /* Negrita para el título */
+    }
+
+    .hero p {
+        font-size: 24px;
+        margin-bottom: 30px;
+    }
+
+    .hero .cta-button {
+        background: #e74c3c;
+        color: #f5f5f5;
+        padding: 15px 30px;
+        text-decoration: none;
+        font-size: 18px;
+        border-radius: 5px;
+        transition: background 0.3s ease, transform 0.3s ease; /* Transiciones suaves */
+    }
+
+        .hero .cta-button:hover {
+            background: #c0392b;
+            transform: scale(1.05); /* Efecto de aumento */
+        }
+
+/* Productos Destacados */
+.featured-products {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+    .featured-products h2 {
+        font-size: 36px;
+        margin-bottom: 30px;
+        color: #f5f5f5; /* Texto blanco para resaltar en el fondo oscuro */
+    }
+
+.product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.product-item {
+    background: #2c3e50; /* Fondo oscuro para las tarjetas de productos */
+    border: 1px solid #444;
+    border-radius: 8px; /* Bordes más redondeados */
+    margin: 15px;
+    padding: 20px;
+    width: calc(25% - 30px); /* Ajuste del ancho */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); /* Sombra más prominente */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves */
+}
+
+    .product-item img {
+        max-width: 100%;
+        border-radius: 5px;
+        margin-bottom: 15px;
+    }
+
+    .product-item h3 {
+        font-size: 18px;
+        margin-bottom: 10px;
+        color: #f5f5f5; /* Texto blanco para los nombres de productos */
+    }
+
+    .product-item p {
+        font-size: 16px;
+        margin-bottom: 10px;
+        color: #ddd; /* Texto más claro para los precios */
+    }
+
+    .product-item .btn {
+        background: #3498db;
+        color: #f5f5f5;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 16px;
+        transition: background 0.3s ease; /* Transición suave para el color */
+    }
+
+        .product-item .btn:hover {
+            background: #2980b9;
+            transform: scale(1.05); /* Efecto de aumento */
+        }
+
+/* Sobre Nosotros */
+.about-us {
+    background: #1a1a1a; /* Fondo oscuro para la sección */
+    padding: 50px 20px;
+    text-align: center;
+    border-radius: 10px; /* Bordes redondeados */
+    margin: 0 auto; /* Centrar en la página */
+    max-width: 1200px; /* Ancho máximo */
+}
+
+    .about-us h2 {
+        font-size: 36px;
+        margin-bottom: 20px;
+        color: #f5f5f5; /* Texto blanco para los títulos */
+    }
+
+    .about-us p {
+        font-size: 18px;
+        max-width: 800px;
+        margin: 0 auto;
+        color: #ddd; /* Texto claro para el contenido */
+    }
+
+/* Pie de Página */
+footer {
+    background: #1a1a1a; /* Fondo oscuro para el pie de página */
+    color: #f5f5f5;
+    padding: 20px 0;
+    text-align: center;
+}
+
+    footer .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    footer p {
+        margin-bottom: 10px;
+    }
+
+    footer .social-media a {
+        color: #f5f5f5;
+        text-decoration: none;
+        margin: 0 10px;
+    }
+
+        footer .social-media a:hover {
+            color: #3498db; /* Color de enlace al pasar el cursor */
+        }
+
+    footer .additional-links a {
+        color: #f5f5f5;
+        text-decoration: none;
+        margin: 0 10px;
+    }
+
+        footer .additional-links a:hover {
+            color: #3498db; /* Color de enlace al pasar el cursor */
+        }

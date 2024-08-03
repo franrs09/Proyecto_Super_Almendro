@@ -1,0 +1,51 @@
+﻿
+
+@model IEnumerable<SuperAlmendros.Models.Producto>
+
+@{
+    ViewBag.Title = "Productos";
+}
+
+<h2>Productos</h2>
+
+<p>
+    <a href="@Url.Action("Create", "Productos")" class="btn btn-primary">Agregar Nuevo Producto</a>
+</p>
+
+<!-- Sección de Productos -->
+<section class="featured-products">
+    <div class="container">
+        <h2>Productos que puedes encontrar</h2>
+        <div class="product-grid">
+            @foreach (var item in Model)
+            {
+                <div class="product-item">
+                    @if (item.Imagenes != null && item.Imagenes.Any())
+                    {
+                        <img src="@item.Imagenes.First().UrlImagen" class="card-img-top" alt="@item.Nombre" />
+                    }
+                    else
+                    {
+                        <img src="~/Images/placeholder.png" class="card-img-top" alt="Imagen no disponible" />
+                    }
+                    <div class="card-body">
+                        <h3>@item.Nombre</h3>
+                        <p><strong>Precio:</strong> $@item.Precio</p>
+                        <p><strong>Estado:</strong> @item.Estado</p>
+                        <p><strong>Categoría:</strong> @item.Categoria.Nombre</p>
+                        <a href="@Url.Action("Details", "Productos", new { id = item.idProducto })" class="btn btn-primary">Ver Detalles</a>
+                        <a href="@Url.Action("Edit", "Productos", new { id = item.idProducto })" class="btn btn-secondary">Editar</a>
+                        <a href="@Url.Action("Delete", "Productos", new { id = item.idProducto })" class="btn btn-danger" onclick="return confirm('¿Estás seguro de que deseas eliminar este producto?');">Eliminar</a>
+
+                        <!-- Formulario para añadir al carrito -->
+                        <form action="@Url.Action("AddToCart", "Carrito")" method="post" style="display:inline;">
+                            <input type="hidden" name="idProducto" value="@item.idProducto" />
+                            <input type="number" name="cantidad" min="1" value="1" style="width: 60px;" />
+                            <button type="submit" class="btn btn-success">Añadir al Carrito</button>
+                        </form>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>

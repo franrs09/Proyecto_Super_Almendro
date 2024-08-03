@@ -1,0 +1,33 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Super Almendros";
+}
+<h2>Gestión de Usuarios</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Email</th>
+            <th>Dirección</th>
+            <th>Teléfono</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var usuario in Model)
+        {
+            <tr>
+                <td>@usuario.Nombre</td>
+                <td>@usuario.Email</td>
+                <td>@usuario.Dirección</td>
+                <td>@usuario.Teléfono</td>
+                <td>
+                    @Html.ActionLink("Editar", "EditarUsuario", new { id = usuario.ID_Usuario }, new { @class = "btn btn-primary" })
+                    @Html.ActionLink("Eliminar", "EliminarUsuario", "Administrador", new { id = usuario.ID_Usuario }, new { @class = "btn btn-danger" })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

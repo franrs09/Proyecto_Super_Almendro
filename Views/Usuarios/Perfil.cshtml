@@ -1,0 +1,57 @@
+﻿@model Proyecto_Super_Almendro.Models.Usuario
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Super Almendros";
+}
+
+<h1>Bienvenido, @Html.DisplayFor(model => model.Nombre)</h1>
+<h2>Perfil de Usuario</h2>
+
+
+<div>
+    <h4>Usuario</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Dirección)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Dirección)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Teléfono)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Teléfono)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaRegistro)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FechaRegistro)
+        </dd>
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Editar Perfil", "EditarPerfil", new { id = Model.ID_Usuario }, new { @class = "btn btn-primary" })
+    
+    
+    @using (Html.BeginForm("CerrarSesion", "Usuarios", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        <button type="submit" class="btn btn-danger">Cerrar Sesión</button>
+    }
+</div>

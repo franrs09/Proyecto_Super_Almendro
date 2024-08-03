@@ -1,0 +1,210 @@
+﻿/* categorias.css */
+/* Estilo de la tabla de categorías */
+.table-categorias {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.table-categorias thead {
+    background-color: #1a1a1a; /* Fondo oscuro para el encabezado de la tabla */
+    color: #f5f5f5; /* Texto blanco */
+}
+
+.table-categorias th, .table-categorias td {
+    padding: 12px;
+    text-align: left;
+}
+
+.table-categorias tbody tr:nth-child(even) {
+    background-color: #2c3e50; /* Fondo alternado para las filas */
+}
+
+.table-categorias tbody tr:hover {
+    background-color: #34495e; /* Fondo más claro al pasar el ratón sobre la fila */
+}
+
+/* Estilo de los botones en la tabla de categorías */
+.btn-categoria {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary-categoria {
+    background-color: #3498db; /* Azul suave */
+    color: #f5f5f5; /* Texto blanco */
+}
+
+    .btn-primary-categoria:hover {
+        background-color: #2980b9; /* Azul oscuro al pasar el ratón */
+    }
+
+.btn-secondary-categoria {
+    background-color: #6c757d; /* Gris suave */
+    color: #f5f5f5; /* Texto blanco */
+}
+
+    .btn-secondary-categoria:hover {
+        background-color: #5a6268; /* Gris oscuro al pasar el ratón */
+    }
+
+.btn-danger-categoria {
+    background-color: #e74c3c; /* Rojo suave */
+    color: #f5f5f5; /* Texto blanco */
+}
+
+    .btn-danger-categoria:hover {
+        background-color: #c0392b; /* Rojo oscuro al pasar el ratón */
+    }
+
+/* Estilo de la sección de productos */
+.productos {
+    padding: 20px;
+}
+
+/* Tarjetas de productos */
+.card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    background-color: #34495e; /* Fondo oscuro para la tarjeta */
+    max-width: 400px; /* Limita el ancho máximo de la tarjeta */
+    margin: auto; /* Centra la tarjeta */
+}
+
+/* Imagen en la tarjeta */
+.card-img-top {
+    width: 100%;
+    height: auto; /* Ajusta la altura automáticamente */
+    object-fit: cover; /* Mantiene la proporción y recorta la imagen si es necesario */
+    border-bottom: 1px solid #ddd; /* Opcional: Agrega una línea para separar la imagen del contenido */
+}
+
+.card-body {
+    padding: 15px;
+    background-color: #2c3e50; /* Fondo oscuro para el contenido */
+}
+
+.card-title {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+    color: #f5f5f5; /* Texto blanco para el título */
+}
+
+.card-text {
+    margin-bottom: 0.5rem;
+    color: #ddd; /* Texto claro para el contenido */
+}
+
+/* Botones en la tarjeta */
+.btn {
+    margin-right: 5px;
+    color: #f5f5f5; /* Color de texto de botones */
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 0.875rem; /* Tamaño de fuente */
+}
+
+.btn-primary {
+    background-color: #3498db; /* Azul Principal */
+}
+
+    .btn-primary:hover {
+        background-color: #2980b9; /* Azul Más Oscuro */
+    }
+
+.btn-secondary {
+    background-color: #6c757d; /* Gris Principal */
+}
+
+    .btn-secondary:hover {
+        background-color: #5a6268; /* Gris Más Oscuro */
+    }
+
+.btn-danger {
+    background-color: #e74c3c; /* Rojo Principal */
+}
+
+    .btn-danger:hover {
+        background-color: #c0392b; /* Rojo Más Oscuro */
+    }
+
+/* Productos Destacados */
+.featured-products {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #121b33; /* Fondo oscuro para destacar los productos */
+}
+
+    .featured-products h2 {
+        font-size: 36px;
+        margin-bottom: 30px;
+        color: #f5f5f5; /* Texto blanco para resaltar en el fondo oscuro */
+    }
+
+.product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.product-item {
+    background: #34495e; /* Fondo ligeramente más claro para las tarjetas de productos */
+    border: 1px solid #444;
+    border-radius: 8px; /* Bordes más redondeados */
+    margin: 15px;
+    padding: 20px;
+    width: calc(25% - 30px); /* Ajuste del ancho */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); /* Sombra más prominente */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves */
+}
+
+    .product-item img {
+        max-width: 100%;
+        border-radius: 5px;
+        margin-bottom: 15px;
+    }
+
+.product-info {
+    color: #34495e; /* Texto blanco para los detalles del producto */
+    line-height: 1.8;
+    padding: 0 20px;
+}
+
+    .product-info h3 {
+        font-size: 18px;
+        margin-bottom: 10px;
+        color: #34495e; /* Texto blanco para los nombres de productos */
+    }
+
+    .product-info p {
+        font-size: 16px;
+        margin-bottom: 10px;
+        color: #34495e; /* Texto más claro para los precios y otros detalles */
+    }
+
+    .product-info .btn {
+        background: #3498db; /* Azul Principal */
+        color: #34495e; /* Texto blanco en el botón */
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 16px;
+        transition: background 0.3s ease; /* Transición suave para el color */
+        display: inline-block; /* Alinea el botón dentro de la tarjeta */
+    }
+
+        .product-info .btn:hover {
+            background: #2980b9; /* Azul Más Oscuro */
+            transform: scale(1.05); /* Efecto de aumento */
+        }

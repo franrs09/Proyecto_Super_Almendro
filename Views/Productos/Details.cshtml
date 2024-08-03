@@ -1,0 +1,132 @@
+﻿@model SuperAlmendros.Models.Producto
+
+@{
+    ViewBag.Title = "Detalles del Producto";
+}
+
+<style>
+    /* Detalles del Producto */
+    .product-details {
+        background: #2c3e50; /* Fondo oscuro */
+        color: #444; /* Texto claro */
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+        padding: 20px;
+        margin: 20px auto;
+        max-width: 800px; /* Limita el ancho máximo */
+    }
+
+    .section-title {
+        font-size: 36px;
+        color: #f5f5f5;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .card {
+        border: none;
+        border-radius: 8px;
+        background-color: #34495e; /* Fondo ligeramente más claro */
+        overflow: hidden;
+    }
+
+    .card-header {
+        background-color: #1a1a1a; /* Fondo oscuro para el encabezado de la tarjeta */
+        padding: 15px;
+        border-bottom: 2px solid #444; /* Línea inferior */
+    }
+
+    .card-title {
+        font-size: 28px;
+        color: #f5f5f5;
+        margin: 0;
+    }
+
+    .card-body {
+        padding: 15px;
+        background-color: #f8f9fa; /* Fondo ligeramente gris para el contenido */
+    }
+
+    .product-info {
+        color: #2c3e50; /* Texto blanco para los detalles del producto */
+        line-height: 1.8;
+        padding: 0 20px;
+    }
+
+        .product-info dt {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .product-info dd {
+            margin: 0;
+        }
+
+    .card-footer {
+        padding: 15px;
+        background-color: #1a1a1a;
+        text-align: center;
+        border-top: 2px solid #444; /* Línea superior */
+    }
+
+    .btn {
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-size: 16px;
+        margin: 5px;
+        color: #f5f5f5;
+        transition: background 0.3s ease, transform 0.3s ease;
+    }
+
+    .btn-primary {
+        background-color: #3498db; /* Azul Principal */
+    }
+
+        .btn-primary:hover {
+            background-color: #2980b9; /* Azul Más Oscuro */
+            transform: scale(1.05); /* Efecto de aumento */
+        }
+
+    .btn-secondary {
+        background-color: #6c757d; /* Gris Principal */
+    }
+
+        .btn-secondary:hover {
+            background-color: #5a6268; /* Gris Más Oscuro */
+            transform: scale(1.05); /* Efecto de aumento */
+        }
+</style>
+
+<div class="container">
+    <div class="product-details">
+        <h2 class="section-title">Detalles del Producto</h2>
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">@Model.Nombre</h4>
+            </div>
+            <div class="card-body">
+                <dl class="product-info">
+                    <dt>Código del Producto:</dt>
+                    <dd>@Model.CodigoProducto</dd>
+
+                    <dt>Nombre:</dt>
+                    <dd>@Model.Nombre</dd>
+
+                    <dt>Precio:</dt>
+                    <dd>$@Model.Precio</dd>
+
+                    <dt>Estado:</dt>
+                    <dd>@Model.Estado</dd>
+
+                    <dt>Categoría:</dt>
+                    <dd>@Model.Categoria.Nombre</dd>
+                </dl>
+            </div>
+            <div class="card-footer">
+                <a href="@Url.Action("Edit", new { id = Model.CodigoProducto })" class="btn btn-primary">Editar</a>
+                <a href="@Url.Action("Index")" class="btn btn-secondary">Volver</a>
+            </div>
+        </div>
+    </div>
+</div>

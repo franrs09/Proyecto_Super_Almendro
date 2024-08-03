@@ -1,0 +1,12 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Super Almendros";
+}
+
+<h1>Bienvenido, @Session["UsuarioNombre"].</h1>
+
+<ul>
+    <li>@Html.ActionLink("Gestionar Usuarios", "GestionUsuarios", "Administrador", new { area = "" }, new { @class = "h1" })</li>
+    <li></li>
+    <li></li>
+</ul>

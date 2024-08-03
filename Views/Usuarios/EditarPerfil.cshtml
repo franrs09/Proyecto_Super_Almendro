@@ -1,0 +1,46 @@
+﻿
+@model Proyecto_Super_Almendro.Models.Usuario
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Super Almendros";
+}
+
+
+<h2>Editar Perfil</h2>
+
+@using (Html.BeginForm("EditarPerfil", "Usuarios", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(model => model.ID_Usuario)
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Nombre)
+        @Html.TextBoxFor(model => model.Nombre, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Nombre)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Email)
+        @Html.TextBoxFor(model => model.Email, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Email)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Dirección)
+        @Html.TextBoxFor(model => model.Dirección, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Dirección)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Teléfono)
+        @Html.TextBoxFor(model => model.Teléfono, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Teléfono)
+    </div>
+
+
+    @Html.HiddenFor(model => model.Contraseña)
+    @Html.HiddenFor(model => model.FechaRegistro)
+
+    <button type="submit" class="btn btn-primary">Guardar</button>
+}

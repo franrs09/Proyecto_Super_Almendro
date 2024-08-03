@@ -1,0 +1,112 @@
+﻿
+@model SuperAlmendros.Models.Producto
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<script type="text/javascript">
+    function confirmDelete() {
+        return confirm('Are you sure you want to delete this product?');
+    }
+</script>
+
+<style>
+    .card {
+        background-color: #ffffff; /* Cambia el color de fondo de la card */
+        color: #6c757d; /* Cambia el color del texto */
+    }
+
+    .card-header {
+        background-color: #808080; /* Color de fondo del encabezado de la card */
+    }
+
+    .btn-danger {
+        background-color: #dc3545; /* Color de fondo del botón Delete */
+        border-color: #dc3545; /* Color del borde del botón Delete */
+    }
+
+        .btn-danger:hover {
+            background-color: #c82333; /* Color de fondo del botón Delete al pasar el ratón */
+            border-color: #bd2130; /* Color del borde del botón Delete al pasar el ratón */
+        }
+
+    .btn-secondary {
+        background-color: #6c757d; /* Color de fondo del botón Back to List */
+        border-color: #6c757d; /* Color del borde del botón Back to List */
+    }
+
+        .btn-secondary:hover {
+            background-color: #5a6268; /* Color de fondo del botón Back to List al pasar el ratón */
+            border-color: #545b62; /* Color del borde del botón Back to List al pasar el ratón */
+        }
+
+    .container {
+        margin-top: 20px;
+    }
+</style>
+
+<div class="container">
+    <h2 class="my-4">Delete Product</h2>
+
+    <div class="card">
+        <div class="card-header">
+            Product Details
+        </div>
+        <div class="card-body">
+            <dl class="row">
+                <dt class="col-sm-3">
+                    @Html.DisplayNameFor(model => model.CodigoProducto)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.CodigoProducto)
+                </dd>
+                <dt class="col-sm-3">
+                    @Html.DisplayNameFor(model => model.Nombre)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.Nombre)
+                </dd>
+                <dt class="col-sm-3">
+                    @Html.DisplayNameFor(model => model.Precio)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.Precio)
+                </dd>
+                <dt class="col-sm-3">
+                    @Html.DisplayNameFor(model => model.Estado)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.Estado)
+                </dd>
+                <dt class="col-sm-3">
+                    @Html.DisplayNameFor(model => model.Categoria.Nombre)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.Categoria.Nombre)
+                </dd>
+                <dt class="col-sm-3">
+                    Image
+                </dt>
+                <dd class="col-sm-9">
+                    @if (Model.Imagenes != null && Model.Imagenes.Any())
+                    {
+                        <img src="@Model.Imagenes.FirstOrDefault()?.UrlImagen" alt="@Model.Nombre" style="max-width: 200px; max-height: 200px;" />
+                    }
+                    else
+                    {
+                        <p>No image available.</p>
+                    }
+                </dd>
+            </dl>
+        </div>
+        <div class="card-footer text-right">
+            @using (Html.BeginForm("Delete", "Productos", FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+                <input type="submit" value="Delete" class="btn btn-danger" onclick="return confirmDelete();" />
+                @Html.ActionLink("Back to List", "Index", new { @class = "btn btn-secondary" })
+            }
+        </div>
+    </div>
+</div>

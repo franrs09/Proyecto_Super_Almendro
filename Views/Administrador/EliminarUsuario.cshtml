@@ -1,0 +1,49 @@
+﻿@model Proyecto_Super_Almendro.Models.Usuario
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Super Almendros";
+}
+
+<<h2>Eliminar Usuario</h2>
+
+<h3>¿Estás seguro de que deseas eliminar este usuario?</h3>
+<div>
+    <h4>Usuario</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Nombre
+        </dt>
+        <dd>
+            @Model.Nombre
+        </dd>
+        <dt>
+            Email
+        </dt>
+        <dd>
+            @Model.Email
+        </dd>
+        <dt>
+            Dirección
+        </dt>
+        <dd>
+            @Model.Dirección
+        </dd>
+        <dt>
+            Teléfono
+        </dt>
+        <dd>
+            @Model.Teléfono
+        </dd>
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <div class="form-actions no-color">
+            <button type="submit" class="btn btn-danger">Eliminar</button>
+            @Html.ActionLink("Cancelar", "GestionUsuarios", null, new { @class = "btn btn-default" })
+        </div>
+    }
+    }
