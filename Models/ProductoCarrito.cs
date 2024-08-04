@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Proyecto_Super_Almendro.Models;
 
 namespace SuperAlmendros.Models
 {

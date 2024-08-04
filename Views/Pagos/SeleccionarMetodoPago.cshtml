@@ -1,0 +1,24 @@
+﻿@model IEnumerable<Proyecto_Super_Almendro.Models.MetodoPago>
+
+@{
+    ViewBag.Title = "Seleccionar Método de Pago";
+}
+
+<div class="container mt-5">
+    <h2 class="mb-4">Seleccionar Método de Pago</h2>
+
+    <form action="@Url.Action("ProcesarPago", "Pagos")" method="post">
+        <div class="form-group">
+            @foreach (var metodo in Model)
+            {
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="idMetodoPago" value="@metodo.idMetodoPago" id="metodo-@metodo.idMetodoPago" required>
+                    <label class="form-check-label" for="metodo-@metodo.idMetodoPago">
+                        @metodo.Nombre
+                    </label>
+                </div>
+            }
+        </div>
+        <button type="submit" class="btn btn-primary">Pagar</button>
+    </form>
+</div>

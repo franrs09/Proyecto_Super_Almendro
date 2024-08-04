@@ -1,0 +1,42 @@
+﻿@model SuperAlmendros.Models.Resena
+
+@{
+    ViewBag.Title = "Editar Reseña";
+}
+
+<div class="container mt-5">
+    <h2>Editar Reseña</h2>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.idProducto, htmlAttributes: new { @class = "control-label" })
+            @Html.DropDownListFor(model => model.idProducto, new SelectList(ViewBag.Productos, "idProducto", "Nombre"), "Seleccionar Producto", new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.idProducto, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.idUsuario, htmlAttributes: new { @class = "control-label" })
+            @Html.DropDownListFor(model => model.idUsuario, new SelectList(ViewBag.Usuarios, "idUsuario", "Nombre"), "Seleccionar Usuario", new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.idUsuario, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Calificacion, htmlAttributes: new { @class = "control-label" })
+            @Html.TextBoxFor(model => model.Calificacion, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Calificacion, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Comentario, htmlAttributes: new { @class = "control-label" })
+            @Html.TextAreaFor(model => model.Comentario, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Comentario, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="form-group">
+            <input type="submit" value="Guardar" class="btn btn-primary" />
+        </div>
+    }
+</div>

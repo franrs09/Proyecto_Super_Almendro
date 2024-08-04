@@ -107,5 +107,11 @@ namespace Proyecto_Super_Almendro.Controllers
 
             return RedirectToAction("Index");
         }
+
+        // Acción para proceder al pago
+        public ActionResult Checkout()
+        {
+            return RedirectToAction("SeleccionarMetodoPago", "Pagos");
+        }
     }
 }

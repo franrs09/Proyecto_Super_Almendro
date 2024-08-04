@@ -1,0 +1,28 @@
+﻿
+@model SuperAlmendros.Models.Resena
+
+@{
+    ViewBag.Title = "Detalles de Reseña";
+}
+
+<div class="container mt-5">
+    <h2>Detalles de la Reseña</h2>
+
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Reseña de @Model.Usuario.Nombre</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Producto: @Model.Producto.Nombre</h6>
+            <p class="card-text"><strong>Calificación:</strong> @Model.Calificacion</p>
+            <p class="card-text"><strong>Comentario:</strong> @Model.Comentario</p>
+            <p class="card-text"><strong>Fecha:</strong> @Model.Fecha.ToString("dd/MM/yyyy")</p>
+
+            <a href="@Url.Action("Edit", "Resenas", new { id = Model.idResena })" class="btn btn-primary">Editar</a>
+            @using (Html.BeginForm("Delete", "Resenas", FormMethod.Post, new { id = Model.idResena }))
+            {
+                @Html.AntiForgeryToken()
+                <input type="submit" value="Eliminar" class="btn btn-danger" onclick="return confirm('¿Estás seguro de que deseas eliminar esta reseña?');" />
+            }
+            <a href="@Url.Action("Index", "Resenas")" class="btn btn-secondary">Volver a la lista</a>
+        </div>
+    </div>
+</div>

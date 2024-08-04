@@ -1,5 +1,6 @@
 ﻿using System.Data.Entity;
-using SuperAlmendros.Models;  // Asegúrate de que el namespace sea correcto
+using Proyecto_Super_Almendro.Models;
+using SuperAlmendros.Models;
 
 namespace Proyecto_Super_Almendro.Models
 {
@@ -15,6 +16,9 @@ namespace Proyecto_Super_Almendro.Models
         public DbSet<CategoriaProducto> Categorias { get; set; }
         public DbSet<ProductoCarrito> ProductosCarrito { get; set; }
         public DbSet<ImagenProducto> ImagenesProductos { get; set; }
+        public DbSet<Pago> Pagos { get; set; }
+        public DbSet<MetodoPago> MetodosPago { get; set; }
+        public DbSet<Resena> Resenas { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -51,6 +55,36 @@ namespace Proyecto_Super_Almendro.Models
             // Configuración de ProductoCarrito
             modelBuilder.Entity<ProductoCarrito>()
                 .ToTable("ProductoCarrito");
+
+            // Configuración de Pago
+            modelBuilder.Entity<Pago>()
+                .ToTable("Pago")
+                .HasKey(p => p.idPago);
+
+            modelBuilder.Entity<Pago>()
+                .Property(p => p.Monto)
+                .IsRequired();
+
+            modelBuilder.Entity<Pago>()
+                .Property(p => p.Fecha)
+                .IsRequired();
+
+            modelBuilder.Entity<Pago>()
+                .Property(p => p.Metodo)
+                .IsRequired();
+
+            modelBuilder.Entity<Pago>()
+                .Property(p => p.idPedido)
+                .IsRequired();
+
+            // Configuración de MetodoPago
+            modelBuilder.Entity<MetodoPago>()
+                .ToTable("MetodoPago")
+                .HasKey(m => m.idMetodoPago);
+
+            modelBuilder.Entity<MetodoPago>()
+                .Property(m => m.Nombre)
+                .IsRequired();
 
             base.OnModelCreating(modelBuilder);
         }

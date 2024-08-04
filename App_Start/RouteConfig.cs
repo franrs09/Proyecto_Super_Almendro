@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using System.Web.Routing;
 
 namespace Proyecto_Super_Almendro
@@ -13,6 +9,14 @@ namespace Proyecto_Super_Almendro
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            // Ruta específica para la página de pago
+            routes.MapRoute(
+                name: "Payment",
+                url: "Carrito/Pago/{id}",
+                defaults: new { controller = "Carrito", action = "Pago", id = UrlParameter.Optional }
+            );
+
+            // Ruta predeterminada
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
